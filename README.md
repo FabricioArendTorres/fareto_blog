@@ -1,0 +1,1 @@
+# fareto_blog
