@@ -1,32 +1,32 @@
-name: Deploy Static Website
+# name: Deploy Static Website
 
-on:
-  push:
-    branches:
-      - main  # Trigger on push to the main branch
+# on:
+#   push:
+#     branches:
+#       - main  # Trigger on push to the main branch
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v2
 
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#       - name: Set up SSH
+#         uses: webfactory/ssh-agent@v0.5.3
+#         with:
+#           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: SSH into server and deploy
-        run: |
-          ssh -o StrictHostKeyChecking=no deployuser@${{ secrets.SERVER_IP }} << 'EOF'
-            # Navigate to the project directory
-            cd /path/to/your/project
+#       - name: SSH into server and deploy
+#         run: |
+#           ssh -o StrictHostKeyChecking=no deployuser@${{ secrets.SERVER_IP }} << 'EOF'
+#             # Navigate to the project directory
+#             cd /path/to/your/project
             
-            git pull origin main
+#             git pull origin main
             
-            docker build -t hugo_builder .
+#             docker build -t hugo_builder .
             
-            # Run the Docker container (or deploy as needed)
-            docker run -d -p 80:80 hugo_builder
-          EOF
+#             # Run the Docker container (or deploy as needed)
+#             docker run -d -p 80:80 hugo_builder
+#           EOF
