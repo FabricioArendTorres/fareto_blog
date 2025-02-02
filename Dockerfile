@@ -19,7 +19,8 @@ COPY --from=builder /app/public /usr/share/nginx/html
 # Set appropriate permissions for the static files
 RUN chown -R nginx:nginx /usr/share/nginx/html
 
-EXPOSE 80
+# web requests will come in at this port
+EXPOSE 8080 
 
 # Use the non-root user for running the server
 CMD ["nginx", "-g", "daemon off;"]

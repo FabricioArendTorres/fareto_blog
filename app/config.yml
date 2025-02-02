@@ -1,8 +1,8 @@
 # If your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would
 # contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-baseURL: "http://blog.fareto.dev/"
+baseURL: "https://fareto.dev/"
 title: PaperMod
-copyright: "© [PaperMod Contributors](https://github.com/adityatelange/hugo-PaperMod/graphs/contributors)"
+copyright: "© [Fabricio Arend Torres](https://github.com/FabricioArendTorres/fareto_blog)"
 paginate: 5
 theme: [hugo-PaperMod]
 
@@ -41,67 +41,6 @@ languages:
         - name: WiKi
           url: https://github.com/adityatelange/hugo-PaperMod/wiki/
 
-  fr:
-    languageName: ":fr:"
-    weight: 2
-    title: PaperModL2
-    taxonomies:
-      category: FRcategories
-      tag: FRtags
-      series: FRseries
-    menu:
-      main:
-        - name: Archive
-          url: archives/
-          weight: 5
-        - name: FRTags
-          url: frtags
-          weight: 10
-        - name: FRCategories
-          url: frcategories
-          weight: 10
-        - name: FRSeries
-          url: frseries
-          weight: 10
-        - name: NullLink
-          url: "#"
-
-    # custom params for each language should be under [langcode].parms - hugo v0.120.0
-    params:
-      languageAltTitle: French
-      profileMode:
-        enabled: true
-        title: PaperMod
-        imageUrl: "https://raw.githubusercontent.com/googlefonts/noto-emoji/master/svg/emoji_u1f9d1_1f3fb_200d_1f4bb.svg"
-        imageTitle: ProfileMode image
-        # imageWidth: 120
-        # imageHeight: 120
-        subtitle: "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
-        buttons:
-          - name: Blog
-            url: posts
-          - name: Profile Mode
-            url: https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode
-
-  fa:
-    languagedirection: rtl
-    weight: 3
-    title: PaperMod RTL
-    taxonomies:
-      category: FAcategories
-      tag: FAtags
-      series: FAseries
-    menu:
-      main:
-        - name: FATags
-          url: fatags
-          weight: 10
-    # custom params for each language should be under [langcode].parms - hugo v0.120.0
-    params:
-      homeInfoParams:
-        Title: "Hi there \U0001F44B"
-        Content: Welcome to RTL layout
-
 outputs:
   home:
     - HTML
@@ -110,8 +49,8 @@ outputs:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-  author: Theme PaperMod
+  description: ""
+  author: Fabricio Arend Torres
   # author: ["Me", "You"] # multiple authors
 
   defaultTheme: auto
@@ -144,15 +83,21 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "PaperMod's Demo"
+    Title: "Machine Learning & Research by Fabricio Arend Torres"
     Content: >
-      👋 Welcome to demo page of Hugo's theme PaperMod!
+      👋 Welcome to the personal portfolio and blog of Fabricio Arend Torres, a machine learning enthusiast, researcher, and programmer.
 
-      - **PaperMod**  is designed to be clean and simple but fast and responsive theme with useful feature-set that enhances UX.
+      I specialize in machine learning, statistics, and scientific programming (in python), and recently obtained my PhD by researching physics-informed Machine Learning methods at the University of Basel, Switzerland. 
+      This blog serves as a collection of my thoughts, research, and projects within these fields.
 
-      - Feel free to show your support by giving us a star 🌟 on GitHub and sharing with your friends and social media .
+      - **Machine Learning**: My work spans areas like deep learning, variational inference, and physics-informed ML.
+      - **Scientific Computing and Python**: With a focus on numerical methods, data manipulation, and algorithm optimization, I apply Python to solve complex problems across diverse fields. 
+        My experience includes working with scientific libraries like NumPy, SciPy, TensorFlow, and PyTorch, as well as different data processing tools ([Geo]Pandas, Rasterio, xarray, ...).
+      - **Current Projects**: From time to time I explore new avenues in different fields, and am always eager to share what I learned.
 
-      - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3).
+      Feel free to explore my blog posts, check out my current and past projects, and don’t hesitate to reach out for collaborations or discussions.
+
+      - The blog theme is based on the [PaperMod](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3) theme.
 
   socialIcons:
     - name: github
