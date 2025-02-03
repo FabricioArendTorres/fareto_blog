@@ -23,4 +23,4 @@ RUN chown -R nginx:nginx /usr/share/nginx/html
 EXPOSE 8080 
 
 # Use the non-root user for running the server
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 8080;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
