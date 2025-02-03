@@ -20,7 +20,7 @@ COPY --from=builder /app/public /usr/share/nginx/html
 RUN chown -R nginx:nginx /usr/share/nginx/html
 
 # web requests will come in at this port
-EXPOSE 8080 
+EXPOSE 8083
 
 # Use the non-root user for running the server
-CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 8080;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
+CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 8083;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
