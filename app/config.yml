@@ -82,14 +82,17 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "Fabricios Blog: About Machine Learning, Scientific Computing and other stuff."
+    Title: "My little Blog on Machine Learning, Scientific Computing and other things."
     Content: |
       **About Me**
+
       Hi, I'm Fabricio, a Computer Scientist working within Machine Learning and Scientific Computing.
       Welcome to my blog about sharing random tidbits of knowledge within this evergrowing, fast evolving field.
+
       {{< small >}}(And while there may be many blogs, I will at least not post behind paywalls on Medium ;) ){{< /small >}}
 
 
+      <br/>   
       **Why start yet another blog on ML and Scientific Computing?**
 
       If you come from a Computer Science or programming background, you're probably more than used to seeing highly complex topics discussed informally—through blog posts, YouTube videos, and hands-on tutorials. 
