@@ -1,7 +1,7 @@
 # If your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would
 # contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
 baseURL: "https://fareto.dev/"
-title: PaperMod
+title: fareto.dev
 copyright: "© [Fabricio Arend Torres](https://github.com/FabricioArendTorres/fareto_blog)"
 paginate: 5
 theme: [hugo-PaperMod]
@@ -14,6 +14,7 @@ buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: true
 mainsections: ["posts", "papermod"]
+
 
 minify:
   disableXML: true
@@ -38,8 +39,6 @@ languages:
         - name: Tags
           url: tags/
           weight: 10
-        - name: WiKi
-          url: https://github.com/adityatelange/hugo-PaperMod/wiki/
 
 outputs:
   home:
@@ -83,38 +82,38 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "Machine Learning & Research by Fabricio Arend Torres"
-    Content: >
-      👋 Welcome to the personal portfolio and blog of Fabricio Arend Torres, a machine learning enthusiast, researcher, and programmer.
+    Title: "Tips and Tricks in Machine Learning & Scientific Computing"
+    Content: |
+      **Why start yet another blog on ML and Scientific Computing?**
 
-      I specialize in machine learning, statistics, and scientific programming (in python), and recently obtained my PhD by researching physics-informed Machine Learning methods at the University of Basel, Switzerland. 
-      This blog serves as a collection of my thoughts, research, and projects within these fields.
+      If you come from a Computer Science or programming background, you're probably used to seeing highly complex topics discussed informally—through blog posts, YouTube videos, and hands-on tutorials. 
+      But **that's not a given in every field**.
+      
+      <br/>       
+      Exploring different scientific disciplines deepened my appreciation for this unconventional way of sharing knowledge. Some of the most valuable insights—tiny tricks barely mentioned in papers, undocumented research code quirks, and field-specific "hidden" knowledge—often circulate only within niche communities.
+      
+      &nbsp;
 
-      - **Machine Learning**: My work spans areas like deep learning, variational inference, and physics-informed ML.
-      - **Scientific Computing and Python**: With a focus on numerical methods, data manipulation, and algorithm optimization, I apply Python to solve complex problems across diverse fields. 
-        My experience includes working with scientific libraries like NumPy, SciPy, TensorFlow, and PyTorch, as well as different data processing tools ([Geo]Pandas, Rasterio, xarray, ...).
-      - **Current Projects**: From time to time I explore new avenues in different fields, and am always eager to share what I learned.
+      Although I've moved away from academia, I still want to contribute to this culture of open knowledge sharing. 
+      This blog is my way of doing just that.
 
-      Feel free to explore my blog posts, check out my current and past projects, and don’t hesitate to reach out for collaborations or discussions.
+      ***
 
-      - The blog theme is based on the [PaperMod](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3) theme.
-
+      {{< small >}}
+      This website is a static page built using [Hugo](https://gohugo.io/) and [PaperMod template](https://github.com/adityatelange/hugo-PaperMod/), with the source code being openly available on [my GitHub](https://github.com/FabricioArendTorres/fareto_blog).
+      Check it out if you're looking to build a simple blog without the hassle of dynamic web pages!
+      {{< /small >}}
   socialIcons:
     - name: github
       title: View Source on Github
-      url: "https://github.com/adityatelange/hugo-PaperMod"
-    - name: Discord
-      title: Join discord community
-      url: "https://discord.gg/ahpmTvhVmp"
-    - name: X
-      title: Share PaperMod on X/Twitter
-      url: "https://x.com/intent/tweet/?text=Checkout%20Hugo%20PaperMod%20%E2%9C%A8%0AA%20fast,%20clean,%20responsive%20Hugo%20theme.&url=https://github.com/adityatelange/hugo-PaperMod&hashtags=Hugo,PaperMod"
-    - name: KoFi
-      title: Buy me a Ko-Fi :)
-      url: "https://ko-fi.com/adityatelange"
+      url: "https://github.com/FabricioArendTorres/fareto_blog"
+
+    - name: linkedin
+      title: Connect with me on LinkedIn
+      url: "https://www.linkedin.com/in/fabricio-arend-torres/"
 
   editPost:
-    URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+    URL: "https://github.com/FabricioArendTorres/fareto_blog/tree/main/app/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -185,3 +184,6 @@ services:
     disableInlineCSS: true
   twitter:
     disableInlineCSS: true
+  googleAnalytics:
+    id: "${GA4_MEASUREMENT_ID}"  # will be injected/substituted during build time
+
