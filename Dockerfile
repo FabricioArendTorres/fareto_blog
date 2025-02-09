@@ -13,9 +13,14 @@ RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/c
 COPY ./app /app
 RUN hugo --destination public
 
+# Development Stage: Run Hugo server (only for dev)
+FROM builder AS dev
+CMD ["hugo", "server", "--bind", "0.0.0.0", "--baseURL", "/", "-p", "80"]
+
+
 #####################################################
 # Stage 2: Serve the static site using Nginx
-FROM nginx:alpine
+FROM nginx:alpine AS prod
 # COPY nginx.template.conf /etc/nginx/templates/default.conf.template
 
 ARG GA4_MEASUREMENT_ID   
