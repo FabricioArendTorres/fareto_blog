@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    ports:
+      - "127.0.0.1:8083:80"  # make docker only accessible internally and from port 8083
+      
+    labels:
+      coolify.domain: "fareto.dev"
+      coolify.port: "8083"

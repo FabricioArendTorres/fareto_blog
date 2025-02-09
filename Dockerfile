@@ -1,26 +1,30 @@
+# 2 stage process. First stage for building static files with hugo. Second stage for serving with nginx.
 FROM alpine:latest AS builder
 LABEL description="Docker Container for Hugo within Coolify."
 LABEL maintainer="Fabricio Arend Torres"
+
 WORKDIR /app
 
-# config
+# install hugo
 RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community hugo
+
 
 # copy and build static pages
 COPY ./app /app
 RUN hugo --destination public
 
+#####################################################
 # Stage 2: Serve the static site using Nginx
 FROM nginx:alpine
+# COPY nginx.template.conf /etc/nginx/templates/default.conf.template
+
+ARG GA4_MEASUREMENT_ID   
+ENV GA4_MEASUREMENT_ID=${GA4_MEASUREMENT_ID}
 
 
 COPY --from=builder /app/public /usr/share/nginx/html
 
 # Set appropriate permissions for the static files
+# Note: the nginx base image already has the nginx user !
 RUN chown -R nginx:nginx /usr/share/nginx/html
 
-# web requests will come in at this port
-EXPOSE 8083
-
-# Use the non-root user for running the server
-CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 8083;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
